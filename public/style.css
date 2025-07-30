@@ -1,0 +1,329 @@
+/* Paste all the CSS you provided above here */
+body {
+  background: linear-gradient(
+    to bottom,
+    #0e0927 0%,
+    #1a0f3c 40%,
+    #2a1255 100%
+  );
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.main-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #b8b8d1;
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+}
+
+.content {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-card {
+  background: rgba(25, 26, 47, 0.93);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(31, 38, 135, 0.18);
+  padding: 28px 22px;
+  min-width: 320px;
+  max-width: 340px;
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: none; /* Adjust if needed, maybe 'calc(100vh - 80px)' for scroll */
+  overflow-y: auto; /* Add scroll if content overflows vertically */
+}
+
+.form-card label {
+  color: #b8b8d1;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Group for standard inputs */
+.input-group {
+    margin-bottom: 10px;
+}
+
+input[type="number"], select {
+  width: 100%;
+  padding: 9px 10px;
+  margin-top: 3px;
+  border-radius: 8px;
+  border: none;
+  background: #23244a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.gender-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 9px 0;
+  border: none;
+  border-radius: 8px;
+  background: #23244a;
+  color: #b8b8d1;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.gender-btn.active, .gender-btn:focus {
+  background: #5be4e4;
+  color: #181c2f;
+  outline: none; /* Remove focus outline when active */
+}
+
+/* Styling for sliders */
+.slider-container {
+    margin-bottom: 10px; /* Spacing below each slider group */
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3px;
+}
+
+input[type="range"] {
+  flex: 1;
+  accent-color: #5be4e4;
+  cursor: pointer;
+  height: 6px; /* Optional: makes slider track slimmer */
+}
+
+/* Style range thumbs (cross-browser) */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #5be4e4;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #5be4e4;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none; /* Remove default border */
+}
+
+
+/* Span displaying slider value */
+.slider-value-display {
+  font-weight: 700;
+  color: #5be4e4;
+  min-width: 32px; /* Ensure space for 3 digits */
+  text-align: right;
+}
+
+.unit {
+  color: #b8b8d1;
+  font-size: 0.95em;
+  margin-left: 2px;
+}
+
+
+/* --- Results Area --- */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 320px;
+  flex: 1 1 340px;
+}
+
+.card {
+  background: rgba(25, 26, 47, 0.93);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 rgba(31, 38, 135, 0.10);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prediction-title {
+  color: #b8b8d1;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.probability-arc {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 10px;
+}
+
+.probability-arc svg {
+  position: absolute;
+  left: 0; top: 0;
+  transform: rotate(-90deg); /* Start arc from top */
+}
+
+.probability-text {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #fff;
+  z-index: 1;
+}
+
+.ai-diagnosis {
+  color: #b8b8d1;
+  text-align: center;
+  font-size: 1.08rem;
+  margin-top: 5px;
+  min-height: 1.2em; /* Prevent layout shift */
+}
+
+.alert-card {
+  display: flex;
+  align-items: flex-start; /* Align icon and text top */
+  gap: 14px;
+  width: 100%;
+  border-radius: 18px; /* Match other cards */
+  margin: 0 auto;
+  padding: 16px 18px;
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.alert-icon { /* Using a div instead of <i> for easier styling */
+  font-size: 1.7rem;
+  margin-top: 2px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  line-height: 1; /* Ensure icon aligns well */
+}
+
+.alert-content {
+    flex-grow: 1;
+}
+
+.alert-title {
+  font-weight: 700;
+  font-size: 1.07rem;
+  margin-bottom: 4px; /* Space between title and desc */
+}
+
+.alert-desc {
+  font-size: 0.98rem;
+  color: #b8b8d1; /* Default color, override below */
+  line-height: 1.4; /* Improve readability */
+}
+
+/* Variations */
+.alert-card.high {
+  background: rgba(255, 87, 87, 0.15); /* Slightly stronger bg */
+  color: #ff8a8a; /* Lighter red for better readability on dark bg */
+}
+.alert-card.high .alert-desc {
+  color: #ffb3b3; /* Even lighter red for description */
+}
+
+.alert-card.normal {
+  background: rgba(91, 228, 228, 0.15); /* Slightly stronger bg */
+  color: #80ffff; /* Lighter cyan */
+}
+.alert-card.normal .alert-desc {
+  color: #b3ffff; /* Even lighter cyan */
+}
+
+.alert-card.initial { /* Style for the default state */
+  background: rgba(91, 150, 228, 0.15);
+  color: #8cbfff;
+}
+.alert-card.initial .alert-desc {
+  color: #cce0ff;
+}
+
+
+/* Submit Button Style */
+.submit-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 15px;
+    background: #5be4e4;
+    color: #181c2f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background: #4acccc;
+}
+
+/* Error message styling */
+#form-error-message {
+    color: #ff8a8a;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 10px;
+    min-height: 1.1em; /* Prevent layout shift */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .form-card, .results {
+    max-width: 500px; /* Limit width on smaller screens */
+    min-width: unset;
+    width: 100%; /* Take full width available */
+    box-sizing: border-box;
+  }
+}

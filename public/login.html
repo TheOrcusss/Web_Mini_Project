@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CardioCare | Auth</title>
+  <link rel="stylesheet" href="/public/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="/public/auth-toggle.js"></script>
+</head>
+
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-box">
+      <div class="toggle-buttons">
+        <button id="loginToggle" class="active">Login</button>
+        <button id="signupToggle">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" method="POST" action="/login" class="form active-form">
+        <h2>Welcome Back</h2>
+          <input type="text" id="loginUsername" name="username" placeholder="Username" required />
+          <input type="password" id="loginPassword" name="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        <p id="loginError" class="error-message"></p>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form id="signupForm" method="POST" action="/signup" class="form">
+        <h2>Create Account</h2>
+          <input type="text" id="signupUsername" name="username" placeholder="Username" required />
+          <input type="email" id="signupEmail" name="email" placeholder="Email" required />
+          <input type="password" id="signupPassword" name="password" placeholder="Password" required />
+          <button type="submit">Sign Up</button>
+        <p id="signupMessage" class="info-message"></p>
+      </form>
+
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Heart Disease Prediction</h1>
+        <p class="subtitle">Enter patient details to predict the likelihood of heart disease using our AI model.</p>
+
+        <div class="content">
+            <div class="form-card">
+                <form id="prediction-form">
+                    <div class="input-group">
+                         <label for="age">Age</label>
+                         <input type="number" id="age" name="age" placeholder="e.g., 52" required min="1" max="120">
+                    </div>
+
+                    <div class="input-group">
+                         <label>Gender</label>
+                         <div class="gender-group">
+                            <button type="button" class="gender-btn" data-value="1">Male</button>
+                            <button type="button" class="gender-btn" data-value="0">Female</button>
+                         </div>
+                         <input type="hidden" id="sex" name="sex" required> </div>
+
+                    <div class="input-group">
+                         <label for="cp">Chest Pain Type</label>
+                         <select id="cp" name="cp" required>
+                            <option value="">-- Select Type --</option>
+                            <option value="0"  selected>Type 0: Typical Angina</option>
+                            <option value="1">Type 1: Atypical Angina</option>
+                            <option value="2">Type 2: Non-anginal Pain</option>
+                            <option value="3">Type 3: Asymptomatic</option>
+                         </select>
+                    </div>
+
+                    <div class="slider-container">
+                        <label for="trestbps">Resting Blood Pressure</label>
+                        <div class="slider-row">
+                            <input type="range" id="trestbps" name="trestbps" min="80" max="200" value="120" step="1">
+                            <span class="slider-value-display" id="trestbps-val">120</span>
+                            <span class="unit">mm Hg</span>
+                        </div>
+                    </div>
+
+                    <div class="slider-container">
+                        <label for="chol">Serum Cholesterol</label>
+                        <div class="slider-row">
+                            <input type="range" id="chol" name="chol" min="100" max="600" value="200" step="1">
+                            <span class="slider-value-display" id="chol-val">200</span>
+                            <span class="unit">mg/dl</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="fbs">Fasting Blood Sugar &gt; 120 mg/dl</label>
+                        <select id="fbs" name="fbs" required>
+                            <option value="">-- Select --</option>
+                            <option value="1" selected >True</option>
+                            <option value="0">False</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="restecg">Resting ECG Results</label>
+                         <select id="restecg" name="restecg" required>
+                            <option value="">-- Select --</option>
+                            <option value="0" selected>Result 0: Normal</option>
+                            <option value="1">Result 1: ST-T wave abnormality</option>
+                            <option value="2">Result 2: Left ventricular hypertrophy</option>
+                         </select>
+                    </div>
+
+                    <div class="slider-container">
+                        <label for="thalach">Maximum Heart Rate Achieved</label>
+                        <div class="slider-row">
+                            <input type="range" id="thalach" name="thalach" min="60" max="220" value="150" step="1">
+                            <span class="slider-value-display" id="thalach-val">150</span>
+                            <span class="unit">bpm</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="exang">Exercise Induced Angina</label>
+                        <select id="exang" name="exang" required>
+                            <option value="">-- Select --</option>
+                            <option value="1" selected>Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="slider-container">
+                         <label for="oldpeak">ST depression induced by exercise</label>
+                        <div class="slider-row">
+                            <input type="range" id="oldpeak" name="oldpeak" min="0" max="6.2" value="1.0" step="0.1">
+                            <span class="slider-value-display" id="oldpeak-val">1.0</span>
+                        </div>
+                    </div>
+
+                     <div class="input-group">
+                         <label for="slope">Slope of peak exercise ST segment</label>
+                         <select id="slope" name="slope" required>
+                             <option value="">-- Select --</option>
+                             <option value="0" selected>Slope 0: Upsloping</option>
+                             <option value="1">Slope 1: Flat</option>
+                             <option value="2">Slope 2: Downsloping</option>
+                         </select>
+                     </div>
+
+                    <div class="input-group">
+                        <label for="ca">Number of Major Vessels (colored)</label>
+                        <select id="ca" name="ca" required>
+                            <option value="">-- Select --</option>
+                            <option value="0" selected>0 Vessels</option>
+                            <option value="1">1 Vessel</option>
+                            <option value="2">2 Vessels</option>
+                            <option value="3">3 Vessels</option>
+                            <option value="4">4 Vessels</option> </select>
+                    </div>
+
+                    <div class="input-group">
+                         <label for="thal">Thalium Stress Test Result</label>
+                         <select id="thal" name="thal" required>
+                              <option value="">-- Select --</option>
+                              <option value="1" selected>Thal 1: Normal</option>
+                              <option value="2">Thal 2: Fixed defect</option>
+                              <option value="3">Thal 3: Reversible defect</option>
+                              </select>
+                    </div>
+
+                    <div id="form-error-message"></div>
+
+                    <button type="submit" class="submit-btn">Predict Disease Risk</button>
+
+                </form>
+            </div><div class="results">
+                <div class="card">
+                    <div class="prediction-title">Prediction Probability</div>
+                    <div class="probability-arc">
+                        <svg width="140" height="140" viewBox="0 0 140 140">
+                            <circle cx="70" cy="70" r="60" fill="none" stroke="#23244a" stroke-width="12"></circle>
+                            <path id="probability-arc-path" fill="none" stroke="#5be4e4" stroke-width="12" stroke-linecap="round"
+                                  d="M 70 10 A 60 60 0 0 1 70 10"> </path>
+                        </svg>
+                        <div class="probability-text" id="probability-text">--%</div>
+                    </div>
+                    <div class="ai-diagnosis" id="ai-diagnosis">Enter patient data to see the prediction.</div>
+                </div>
+
+                <div class="alert-card initial" id="alert-card">
+                     <div class="alert-icon" id="alert-icon">&#9432;</div> <div class="alert-content">
+                         <div class="alert-title" id="alert-title">Information</div>
+                         <div class="alert-desc" id="alert-desc">Prediction details and interpretation will appear here once you submit the form.</div>
+                     </div>
+                 </div>
+            </div></div></div><script src="script.js"></script>
+</body>
+</html>
