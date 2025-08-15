@@ -9,7 +9,7 @@ const authRoutes = require('./routes/auth');
 const app = express();
 const PORT = 3000;
 
-mongoose.connect('mongodb+srv://admin:yCx9PhqFvb9bWX_@cluster0.9fgmtbd.mongodb.net/usersDB?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect('');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
@@ -17,7 +17,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
-    mongoUrl: 'mongodb+srv://admin:yCx9PhqFvb9bWX_@cluster0.9fgmtbd.mongodb.net/usersDB?retryWrites=true&w=majority&appName=Cluster0'
+    mongoUrl: ''
   }),
 }));
 
